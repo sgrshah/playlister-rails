@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%=@artist.artist_name%></h2>
+
+<ul>
+	<% Song.joins(:artist).where('songs.artist_id' => @artist.id).each do |song| %>
+		<%genre = Genre.find(song.genre_id)%>
+		<li><%=link_to "#{song.song_name}", song%> - <%=link_to "#{genre.genre_name}", genre%></li>
+	<%end%>
+</ul
+
+<%= link_to 'Edit', edit_artist_path(@artist) %> |
+<%= link_to 'Back', artists_path %>
