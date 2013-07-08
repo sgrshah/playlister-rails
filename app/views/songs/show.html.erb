@@ -3,9 +3,9 @@
 <h2><%=@song.song_name%></h2>
 
 <ul>
-		<%artist = Artist.find(@song.artist_id)%>
-		<%genre = Genre.find(@song.genre_id)%>
-		<li><%=link_to "#{artist.artist_name}", artist%> - <%=link_to "#{genre.genre_name}", genre%></li>
+		<%#artist = Artist.find(@song.artist_id)%>
+		<%#genre = Genre.find(@song.genre_id)%>
+		<li><%=link_to "#{@song.artist.artist_name}", @song.artist%> - <%=link_to "#{@song.genre.genre_name}", @song.genre%></li>
 </ul
 
 <%= link_to 'Edit', edit_song_path(@song) %> |

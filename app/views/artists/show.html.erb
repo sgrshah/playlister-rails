@@ -4,8 +4,8 @@
 
 <ul>
 	<% Song.joins(:artist).where('songs.artist_id' => @artist.id).each do |song| %>
-		<%genre = Genre.find(song.genre_id)%>
-		<li><%=link_to "#{song.song_name}", song%> - <%=link_to "#{genre.genre_name}", genre%></li>
+		<%#genre = Genre.find(song.genre_id)%>
+		<li><%=link_to "#{song.song_name}", song%> - <%=link_to "#{song.genre.genre_name}", song.genre%></li>
 	<%end%>
 </ul
 
